@@ -79,5 +79,24 @@ namespace inheritence
                 MessageBox.Show(e.Message);
             }
         }
+        
+        public void DeleteOne(car oneCar)
+        {
+            try
+            {
+                connection.Open();
+                string query = $"DELETE FROM {tableName} WHERE ID = {oneCar.id}";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.ExecuteNonQuery();
+                command.Dispose();
+                connection.Close();
+                MessageBox.Show("Bober kurwa");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                
+            }
+        }
     }
 }

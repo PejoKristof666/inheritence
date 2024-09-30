@@ -26,6 +26,7 @@ namespace inheritence
             oneCar.model = "Bober";
             oneCar.year = 1973;
             db.addOne(oneCar);
+            
         }
     }
 }
